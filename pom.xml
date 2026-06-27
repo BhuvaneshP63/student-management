@@ -29,7 +29,20 @@
             <artifactId>jakarta.annotation-api</artifactId>
             <version>3.0.0</version>
         </dependency>
+        <!-- Spring Jdbc -->
+        <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jdbc</artifactId>
+    <version>6.2.8</version>
+</dependency>
+    <!-- Mysql Connector -->
+    <dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <version>9.3.0</version>
+</dependency>
 
     </dependencies>
+    
 
 </project>

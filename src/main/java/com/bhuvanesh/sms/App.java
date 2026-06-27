@@ -11,13 +11,15 @@ public class App {
 	public static void main(String[] args) {
 		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 		Student student = context.getBean(Student.class);
-		student.setId(101);
+		/*student.setId(101);
         student.setName("Bhuvanesh");
         student.setDepartment("CSE");
-        student.setMarks(90);
+        student.setMarks(90);*/
         StudentController controller = context.getBean(StudentController.class);
-        controller.registerStudent(student);
+        //controller.registerStudent(student);
         controller.viewStudent(101);
+        controller.updateStudent(student);
+        controller.deleteStudent(101);
 	}
 
 }

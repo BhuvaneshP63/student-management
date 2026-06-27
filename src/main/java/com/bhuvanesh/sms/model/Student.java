@@ -16,16 +16,7 @@ public class Student {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Student() {
-		System.out.println("Student created...");
-	}
-	public Student(int id, String name, String department, double marks) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.department = department;
-		this.marks = marks;
-	}
+	
 	public String getName() {
 		return name;
 	}
