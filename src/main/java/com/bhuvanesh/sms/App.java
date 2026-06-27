@@ -17,9 +17,10 @@ public class App {
         student.setMarks(90);*/
         StudentController controller = context.getBean(StudentController.class);
         //controller.registerStudent(student);
-        controller.viewStudent(101);
-        controller.updateStudent(student);
-        controller.deleteStudent(101);
+        //controller.viewStudent(101);
+        //controller.updateStudent(student);
+        //controller.deleteStudent(101);
+        controller.registerStudentUsingNamedParameter(student);
 	}
 
 }

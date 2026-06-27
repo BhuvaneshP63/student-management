@@ -37,5 +37,8 @@ public class StudentController {
 	        studentservice.removeStudent(id);
 
 	    }
+	    public void registerStudentUsingNamedParameter(Student student) {
+	        studentservice.registerStudentUsingNamedParameter(student);
+	    }
 
 }

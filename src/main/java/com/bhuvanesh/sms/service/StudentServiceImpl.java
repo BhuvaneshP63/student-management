@@ -50,5 +50,9 @@ public class StudentServiceImpl implements StudentService{
 		studentrepository.deleteStudent(id);
 		
 	}
+	@Override
+	public void registerStudentUsingNamedParameter(Student student) {
+	    studentrepository.saveStudentUsingNamedParameter(student);
+	}
 
 }

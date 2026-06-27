@@ -7,6 +7,7 @@ public interface StudentService {
 	Student viewStudent(int id);
 	void updateStudent(Student student);
 	void removeStudent(int id);
+	void registerStudentUsingNamedParameter(Student student);
 	
 
 }

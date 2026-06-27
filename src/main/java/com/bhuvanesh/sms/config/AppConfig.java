@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 @Configuration
 @ComponentScan(basePackages = "com.bhuvanesh.sms")
@@ -24,6 +25,11 @@ public class AppConfig {
 		JdbcTemplate jdbctemplate = new JdbcTemplate(dataSource);
 		return jdbctemplate;
 		
+	}
+	@Bean
+	public NamedParameterJdbcTemplate namedparameterjdbcTemplate(DataSource dataSource) {
+		NamedParameterJdbcTemplate namedparameterjdbctemplate = new NamedParameterJdbcTemplate(dataSource);
+		return namedparameterjdbctemplate;
 	}
 	
 }

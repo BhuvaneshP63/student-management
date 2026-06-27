@@ -7,6 +7,7 @@ public interface StudentRepository {
 	Student getStudent(int id);
 	void updateStudent(Student student);
 	void deleteStudent(int id);
+	public void saveStudentUsingNamedParameter(Student student);
 	
 
 }

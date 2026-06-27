@@ -2,6 +2,8 @@ package com.bhuvanesh.sms.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.bhuvanesh.sms.mapper.StudentRowMapper;
@@ -10,6 +12,8 @@ import com.bhuvanesh.sms.model.Student;
 public class StudentRepositoryImpl implements StudentRepository {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+	@Autowired
+	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
 	@Override
 	public void saveStudent(Student student) {
@@ -48,6 +52,21 @@ public class StudentRepositoryImpl implements StudentRepository {
 		String sql = "Delete From student where id = ?";
 		jdbcTemplate.update(sql,id);
 		System.out.println("Student deleted!!");
+		
+	}
+
+	@Override
+	public void saveStudentUsingNamedParameter(Student student) {
+		String sql = "INSERT INTO student(id,name,department,marks) VALUES(:id,:name,:department,:marks)";
+		MapSqlParameterSource params = new MapSqlParameterSource();
+
+		params.addValue("id", student.getId());
+		params.addValue("name", student.getName());
+		params.addValue("department", student.getDepartment());
+		params.addValue("marks", student.getMarks());
+
+		namedParameterJdbcTemplate.update(sql, params);
+		System.out.println("Student saved sucessfuly!!");
 		
 	}
 
